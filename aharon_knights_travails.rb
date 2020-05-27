@@ -12,14 +12,15 @@ class KnightPathFinder
         my_row = @start_pos[0]
         my_col = @start_pos[1]
 
-        possible_coordinates = [ 
-            [my_row+2, my_col+1]
-            [my_row+1, my_col+2]
-            [my_row-1, my_col+2]
-            [my_row-2, my_col+1]
-            [my_row-2, my_col-1]
-            [my_row-1, my_col-2]
-            [my_row+1, my_col-2]
+        possible_coordinates = 
+        [ 
+            [my_row+2, my_col+1],
+            [my_row+1, my_col+2],
+            [my_row-1, my_col+2],
+            [my_row-2, my_col+1],
+            [my_row-2, my_col-1],
+            [my_row-1, my_col-2],
+            [my_row+1, my_col-2],
             [my_row+2, my_col-1]
         ]
         possible_coordinates.reject do |coord| 
