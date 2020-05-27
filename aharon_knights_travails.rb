@@ -5,12 +5,12 @@ class KnightPathFinder
         @start_pos = start_pos
         @root_node = PolyTreeNode.new(start_pos)
         @considered_positions = [start_pos]
-        self.build_move_tree
+        # self.build_move_tree
     end
 
     def self.valid_moves(pos)
-        my_row = @start_pos[0]
-        my_col = @start_pos[1]
+        my_row = pos[0]
+        my_col = pos[1]
 
         possible_coordinates = 
         [ 
@@ -23,7 +23,7 @@ class KnightPathFinder
             [my_row+1, my_col-2],
             [my_row+2, my_col-1]
         ]
-        possible_coordinates.reject do |coord| 
+        possible_coordinates.reject! do |coord| 
             # for standard 8x8 chess board
             (coord[0] < 0 || coord[0] > 7) || (coord[1] < 0 || coord[1] > 7)
         end
@@ -34,7 +34,7 @@ class KnightPathFinder
     def new_move_positions(pos)
         valid_moves = self.class.valid_moves(pos)
         valid_moves.reject! { |pos| @considered_positions.include?(pos) }
-        @considered_positions << valid_moves
+        valid_moves.each { |pos| @considered_positions << pos }             
         return valid_moves
     end
 end
