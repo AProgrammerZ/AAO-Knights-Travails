@@ -1,5 +1,5 @@
 # Knight's Travails
-** Read through all the instructions before beginning! **
+**Read through all the instructions before beginning!**
 
 ## Learning Goals
 - Be able to implement your PolyTreeNode to build a path from start to finish
