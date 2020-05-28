@@ -48,10 +48,6 @@ When you have completed, and tested, #build_move_tree get a code review from you
 Once you are finished with phases 1 & 2 head over to Part Two.
 
 
-
-
-
-
 # Knight's Trevails Continued (Part 2)
 
 ## Finish Phases I & II before continuing!
