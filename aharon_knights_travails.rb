@@ -3,7 +3,6 @@ require_relative "./aharon_PolyTreeNode.rb"
 
 class KnightPathFinder        
     def initialize(start_pos)
-        @start_pos = start_pos
         @root_node = PolyTreeNode.new(start_pos)
         @considered_positions = [start_pos]
         self.build_move_tree
@@ -54,10 +53,25 @@ class KnightPathFinder
             queue << next_nodes
             queue.flatten!
         end
-        # @root_node now has a tree in it (hopefully)   
-    end    
+    end
+    
+    def find_path(end_pos)
+        end_node = @root_node.dfs(end_pos)
+        trace_path_back(end_node)
+    end
+
+    def trace_path_back(end_node)
+        positions = [end_node.value]
+
+        until positions.include?(@root_node.value)
+            positions << end_node.parent.value
+            end_node = end_node.parent
+        end
+
+        positions.reverse
+    end
 end
 
-# load "aharon_knights_travails.rb"
-# k = KnightPathFinder.new([2,2])
-# k.build_move_tree
+if __FILE__ == $PROGRAM_NAME
+    p KnightPathFinder.new([0,0]).find_path([6,2])
+end
