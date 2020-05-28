@@ -1,3 +1,7 @@
+(https://open.appacademy.io/learn/full-stack-online/ruby/knights-travails and https://open.appacademy.io/learn/full-stack-online/ruby/knights-travails--part-two-)
+
+# Project Description: 
+
 # Knight's Travails
 **Read through all the instructions before beginning!**
 
